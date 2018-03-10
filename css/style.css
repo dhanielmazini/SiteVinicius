@@ -1,5 +1,6 @@
 html, body{
     height: 100%;
+    width: 100%;
     overflow: auto;
 }
 
@@ -9,7 +10,24 @@ html, body{
 }
 
 body{
-    font-family: Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+a {
+    color: #F05F40;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #f05f40;
+}
+
+#barra-navegacao{
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
 /** Home **/
