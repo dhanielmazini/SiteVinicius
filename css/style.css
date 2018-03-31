@@ -7,6 +7,17 @@ body{
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.dropdown-content {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 15px;
+	vertical-align: center;
+	align-content: middle;
+	width: 250px;
+	height: auto;
+}
+
 
 /** Home **/
 

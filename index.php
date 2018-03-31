@@ -1,3 +1,7 @@
+<?php
+    $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,32 +26,70 @@
 </head>
 
 <body>
+
+    
+
     <header id="top-page" class="scrollspy">
+
         <div class="navbar-fixed">
             <nav class="blue darken-4">
                 <div class="container">
                     <div class="nav-wrapper">
-                    <a href="#top-page" class="brand-logo"><img style="padding-top: 10px;" src="imagens/VNM.jpeg" height="50px" width="97px"></a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#empreendimentos">Nossos Projetos</a></li>
-                        <li><a href="#obras">Nossas Obras</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                        <li><a href="php/login.php">Login</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="#empreendimentos">Nossos Projetos</a></li>
-                        <li><a href="#obras">Nossas Obras</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                        <li><a href="php/login.php">Login</a></li>
-                    </ul>
+                        <a href="#top-page" class="brand-logo"><img style="padding-top: 10px;" src="imagens/VNM.jpeg" height="50px" width="97px"></a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#empreendimentos">Nossos Projetos</a></li>
+                            <li><a href="#obras">Nossas Obras</a></li>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                            <li class="login">
+                                <a class="site-nav__link dropdown-button" data-activates="features-dropdown" data-beloworigin="true" data-constrainwidth="false" data-hover="false">
+                                    Login<i class="material-icons right">arrow_drop_down</i>
+                                </a>
+                                <ul id="features-dropdown" class="site-nav__submenu dropdown-content">
+                                    <form method="post" action="validar_acesso.php" id="formLogin">
+                                    <li>
+                                        <div class="input-field">
+                                            <input id="user" type="text" class="validate" name="usuario">
+                                            <label for="user">Usuário</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="input-field">
+                                            <input id="password" type="password" class="validate" name="senha">
+                                            <label for="password">Senha</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button class="btn waves-effect waves-light center" type="submit" name="action" id="btnLogin">Login
+                                                <i class="material-icons right">send</i>
+                                        </button>
+                                    </li>
+                                    </form>  
+                                    <li>
+                                        <?php
+                                            if($erro == 1){
+                                                echo '<font color= "#FF0000">Usuario e/ou senha inválido(s)</font>';
+                                            }
+                                        ?>
+                                    </li>                                  
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </div>
 
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="#empreendimentos">Nossos Projetos</a></li>
+            <li><a href="#obras">Nossas Obras</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a class="dropdown-trigger" data-target="dropdown1">Login<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+
+        
 
         <div class="section no-pad-bot" id="index-banner">
             <div class="container">
@@ -57,9 +99,8 @@
                 <h3 class="header col s12 light">Seu lar se encontra aqui</h3>
               </div>
               <br><br><br><br>
-        
             </div>
-          </div>
+        </div>
 
     </header>
 
